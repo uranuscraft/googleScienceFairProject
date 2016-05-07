@@ -14,11 +14,14 @@ public static double tritiumRadius =  1.87 * Math.pow(10, -15);
 System.out.println(fission.TransmissionCoeffient.TransmissionCoeffientOfTwoWells(5.80, 2.45, .95, 7.75, .6, 0.0028));
 
 System.out.println(fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(deuteronMass, inputJoules, 1,1 , deuteronRadius,  deuteronRadius));
+double j = fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(deuteronMass, inputJoules, 1,1 , deuteronRadius,  deuteronRadius) * fission.TransmissionCoeffient.TransmissionCoeffientOfTwoWells(5.80, 2.45, .95, 7.75, .6, 0.0028) * .25;
+System.out.println(j);
 //System.out.println(fusion.TransmissionCoeffient.TransmissionCoeffientforFusion(deuteronMass, inputJoules, 2, deuteronRadius));
 System.out.println("TD");
 System.out.println(fission.TransmissionCoeffient.TransmissionCoeffientOfTwoWells(5.80, 14.1 , .95, 7.75, .6, 0.0028));
 System.out.println(fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(tritiumMass, inputJoules, 1,1 , deuteronRadius, tritiumRadius)+fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(deuteronMass, inputJoules, 1,1 , deuteronRadius, tritiumRadius));
-System.out.println("Gamma");
+double u = fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(tritiumMass, inputJoules, 1,1 , deuteronRadius, tritiumRadius)+fusion.TransmissionCoeffient.IntegralTransmissionCoeffientforFusion(deuteronMass, inputJoules, 1,1 , deuteronRadius, tritiumRadius) * fission.TransmissionCoeffient.TransmissionCoeffientOfTwoWells(5.80, 14.1 , .95, 7.75, .6, 0.0028); 
+System.out.println(u);
 	}
 
 }
